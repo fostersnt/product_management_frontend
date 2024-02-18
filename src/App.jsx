@@ -9,9 +9,12 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
 
-    <>
-      <Users />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/cat' Component={Users}></Route>
+      </Routes>
+      {/* <Users /> */}
+    </BrowserRouter>
   )
 }
 
