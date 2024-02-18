@@ -57,11 +57,18 @@ export default function Users() {
         },
         {
             name: 'Actions',
+            center: true,
             cell: (row) => (
                 <div className={styles.action_buttons}>
-                    <button onClick={() => handleView(row.id)}>View</button>
-                    <button onClick={() => handleEdit(row.id)}>Edit</button>
-                    <button onClick={() => handleDelete(row.id)} className={styles.btnWidth}>Delete</button>
+                    <button onClick={() => handleView(row.id)} className='btn btn-info'>
+                        <i className='bi bi-trash'></i>
+                    </button>
+                    <button onClick={() => handleEdit(row.id)} className='btn btn-primary'>
+                        <i className='bi bi-eye'></i>
+                    </button>
+                    <button onClick={() => handleDelete(row.id)} className='btn btn-danger'>
+                        <i className='bi bi-pencil-square'></i>
+                    </button>
                 </div>
             ),
         },
@@ -70,11 +77,12 @@ export default function Users() {
     const data = users;
 
     return (<div className={styles.main}>
-        <div className={styles.table}>
+        <div className="table table-responsive table-striped table-bordered">
             <DataTable
                 columns={columns}
                 data={data}
                 pagination
+                responsive
             />
         </div>
     </div>)
