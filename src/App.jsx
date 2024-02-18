@@ -11,11 +11,15 @@ import SideBar from './components/SideBar';
 function App() {
   return (
     <BrowserRouter>
-      <SideBar></SideBar>
-      <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/users' Component={Users}></Route>
-      </Routes>
+      <div id='main_container'>
+        <SideBar></SideBar>
+        <div id='content'>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/users' Component={Users}></Route>
+          </Routes>
+        </div>
+      </div >
     </BrowserRouter>
   )
 }
