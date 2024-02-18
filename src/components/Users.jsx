@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import DataTable from 'react-data-table-component';
+import styles from './Users.module.css';
+import moment from 'moment';
 
 export default function Users() {
     const [users, setUsers] = useState([]);
@@ -45,23 +47,25 @@ export default function Users() {
         },
         {
             name: 'created_at',
-            selector: row => row.created_at,
+            selector: row => moment(row.created_at).format('MMMM Do YYYY, h:mm:ss a'),
             sortable: true,
         },
         {
             name: 'updated_at',
-            selector: row => row.updated_at,
+            selector: row => moment(row.updated_at).format('MMMM Do YYYY, h:mm:ss a'),
             sortable: true,
         },
     ];
 
     const data = users;
 
-    return (<div>
-        <DataTable
-            columns={columns}
-            data={data}
-            pagination
-        />
+    return (<div className={styles.main}>
+        <div className={styles.table}>
+            <DataTable
+                columns={columns}
+                data={data}
+                pagination
+            />
+        </div>
     </div>)
 }
