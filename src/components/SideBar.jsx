@@ -5,12 +5,14 @@ import { NavLink } from "react-router-dom";
 function SideBar() {
     return (
         <div id="side_bar">
-            <header>
-                <nav>
+            <ul>
+                <li>
                     <NavLink to='/'>Home</NavLink>
+                </li>
+                <li>
                     <NavLink to='/users'>Users</NavLink>
-                </nav>
-            </header>
+                </li>
+            </ul>
         </div>
     )
 }
