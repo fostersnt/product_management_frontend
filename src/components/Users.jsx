@@ -55,6 +55,16 @@ export default function Users() {
             selector: row => moment(row.updated_at).format('MMMM Do YYYY, h:mm:ss a'),
             sortable: true,
         },
+        {
+            name: 'Actions',
+            cell: (row) => (
+                <div className={styles.action_buttons}>
+                    <button onClick={() => handleView(row.id)}>View</button>
+                    <button onClick={() => handleEdit(row.id)}>Edit</button>
+                    <button onClick={() => handleDelete(row.id)} className={styles.btnWidth}>Delete</button>
+                </div>
+            ),
+        },
     ];
 
     const data = users;
