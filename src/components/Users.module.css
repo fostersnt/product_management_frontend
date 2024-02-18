@@ -19,6 +19,9 @@
   /* width: 80px; */
   margin: 2px;
 }
+.action_buttons > button i {
+  color: white;
+}
 .action_buttons > button:nth-child(1) {
   /* background-color: aqua; */
 }

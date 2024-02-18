@@ -1,10 +1,11 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import DataTable from 'react-data-table-component';
 import styles from './Users.module.css';
 import moment from 'moment';
 
-export default function Users() {
+function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -87,3 +88,5 @@ export default function Users() {
         </div>
     </div>)
 }
+
+export default React.memo(Users);
