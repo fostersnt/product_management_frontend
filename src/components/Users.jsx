@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import DataTable from 'react-data-table-component';
-// import { axios } from './../../node_modules/axios/dist/esm/axios';
 
 export default function Users() {
     const [users, setUsers] = useState([]);
@@ -12,7 +11,8 @@ export default function Users() {
 
             const options = {
                 method: 'GET',
-                url: 'https://odds.p.rapidapi.com/v4/sports',
+                // url: 'https://odds.p.rapidapi.com/v4/sports',
+                url: 'http://127.0.0.1:8000/api/users',
                 params: { all: 'true' },
                 headers: {
                     'X-RapidAPI-Key': '44f54adecamsh757b964b6f94522p112bbdjsn81d9f06f647d',
@@ -22,34 +22,35 @@ export default function Users() {
 
             try {
                 const response = await axios.request(options);
+                // const response = await axios.request(options);
                 setUsers(response.data);
                 console.log(response.data);
             } catch (error) {
                 console.error(error);
             }
         }
-        output()
-    });
+        output();
+    }, []);
 
     const columns = [
         {
-            name: 'Title',
-            selector: row => row.title,
+            name: 'name',
+            selector: row => row.name,
             sortable: true,
         },
         {
-            name: 'key',
-            selector: row => row.key,
+            name: 'email',
+            selector: row => row.email,
             sortable: true,
         },
         {
-            name: 'group',
-            selector: row => row.group,
+            name: 'created_at',
+            selector: row => row.created_at,
             sortable: true,
         },
         {
-            name: 'description',
-            selector: row => row.description,
+            name: 'updated_at',
+            selector: row => row.updated_at,
             sortable: true,
         },
     ];
@@ -57,7 +58,6 @@ export default function Users() {
     const data = users;
 
     return (<div>
-        <h1>Hello world</h1>
         <DataTable
             columns={columns}
             data={data}
