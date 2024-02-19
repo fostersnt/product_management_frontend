@@ -1,0 +1,34 @@
+.main {
+  /* background-color: grey; */
+  color: red;
+  /* width: 100vw; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  /* width: 100%; */
+  /* overflow: scroll; */
+}
+.action_buttons {
+  display: flex;
+}
+.action_buttons > button {
+  /* width: 80px; */
+  margin: 2px;
+}
+.action_buttons > button i {
+  color: white;
+}
+.action_buttons > button:nth-child(1) {
+  /* background-color: aqua; */
+}
+.action_buttons > button:nth-child(2) {
+  /* background-color: green; */
+  /* color: white; */
+}
+.action_buttons > button:nth-child(3) {
+  /* background-color: red; */
+}
