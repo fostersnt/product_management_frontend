@@ -1,7 +1,9 @@
-const actions = () => {
+const USER_DELETED = "USER_DELETED";
+
+const userAction = () => {
   return {
-    type: "DELETE_USER",
+    type: USER_DELETED,
   };
 };
 
-export default actions;
+export default deleteUser;
