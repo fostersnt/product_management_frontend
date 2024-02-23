@@ -8,6 +8,18 @@ import moment from 'moment';
 function Users() {
     const [users, setUsers] = useState([]);
 
+    function handleView() {
+        return null;
+    }
+
+    function handleEdit() {
+        return null;
+    }
+
+    function handleDelete() {
+        return null;
+    }
+
     useEffect(() => {
         const output = async () => {
             // const axios = require('axios');
@@ -16,11 +28,11 @@ function Users() {
                 method: 'GET',
                 // url: 'https://odds.p.rapidapi.com/v4/sports',
                 url: 'http://127.0.0.1:8000/api/users',
-                params: { all: 'true' },
-                headers: {
-                    'X-RapidAPI-Key': '44f54adecamsh757b964b6f94522p112bbdjsn81d9f06f647d',
-                    'X-RapidAPI-Host': 'odds.p.rapidapi.com'
-                }
+                // params: { all: 'true' },
+                // headers: {
+                //     'X-RapidAPI-Key': '44f54adecamsh757b964b6f94522p112bbdjsn81d9f06f647d',
+                //     'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+                // }
             };
 
             try {
@@ -58,7 +70,7 @@ function Users() {
         },
         {
             name: 'Actions',
-            center: true,
+            // center: 'true',
             cell: (row) => (
                 <div className={styles.action_buttons}>
                     <button onClick={() => handleView(row.id)} className='btn btn-info'>
