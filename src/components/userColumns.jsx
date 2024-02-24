@@ -21,6 +21,7 @@ const columns = [
     {
         name: 'Updated At',
         selector: row => moment(row.updated_at).format('Do YYYY, h:mm:ss a'),
+        // selector: row => moment(row.updated_at).format('Do YYYY, h:mm:ss a'),
         // selector: row => moment(row.updated_at).format('MMMM Do YYYY, h:mm:ss a'),
         sortable: true,
     },
