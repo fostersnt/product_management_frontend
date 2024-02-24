@@ -1,16 +1,14 @@
-import action from "./action";
-
-let initialState = {
+const initialState = {
   name: "",
   age: 0,
   class: "Basic 2",
 };
 
-const userReducer = (initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_DELETED:
       return {
-        ...initialState,
+        ...state,
         name: "Foster",
       };
       break;

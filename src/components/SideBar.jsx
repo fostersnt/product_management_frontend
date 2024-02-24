@@ -12,6 +12,9 @@ function SideBar() {
                 <li>
                     <NavLink to='/users'>Users</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/datatable'>DataTable</NavLink>
+                </li>
             </ul>
         </div>
     )

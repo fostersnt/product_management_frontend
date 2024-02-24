@@ -6,4 +6,4 @@ const userAction = () => {
   };
 };
 
-export default deleteUser;
+export default userAction;
