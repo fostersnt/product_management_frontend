@@ -12,6 +12,15 @@ import myData from './dataTable/CustomData.json';
 import userColumns from './userColumns';
 import moment from 'moment';
 
+function formatDate(any_date){
+    try {
+        any_date = moment(any_date).format('Do YYYY, h:mm:ss a');
+    } catch (error) {
+        any_date = 'N/A';
+    }
+    return any_date;
+}
+
 function Users() {
   const [users, setUsers] = useState([]);
 
@@ -55,8 +64,8 @@ function Users() {
     // const headers = userColumns.map((column) => column.name);
 
     const dataFormatted = data.map((row) => {
-        let formatCreatedAt = moment(row.created_at).format('Do YYYY, h:mm:ss a');
-        let formatUpdatedAt = moment(row.updated_at).format('Do YYYY, h:mm:ss a');
+        let formatCreatedAt = formatDate(row.created_at);
+        let formatUpdatedAt = formatDate(row.updated_at);
         return [row.name, row.email, formatCreatedAt, formatUpdatedAt]
     });
     console.log(data)
