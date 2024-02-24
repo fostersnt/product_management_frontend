@@ -18,6 +18,9 @@ function SideBar() {
                 <li>
                     <NavLink to='/table-two'>Table Two</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/table-three'>Table Three</NavLink>
+                </li>
             </ul>
         </div>
     )

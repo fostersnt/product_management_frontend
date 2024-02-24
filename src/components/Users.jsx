@@ -4,6 +4,7 @@ import axios from "axios";
 import DataTable from 'react-data-table-component';
 import styles from './Users.module.css';
 import moment from 'moment';
+import myData from './dataTable/CustomData.json'
 
 function Users() {
     const [users, setUsers] = useState([]);
@@ -36,9 +37,10 @@ function Users() {
             };
 
             try {
-                const response = await axios.request(options);
                 // const response = await axios.request(options);
-                setUsers(response.data);
+                // const response = await axios.request(options);
+                setUsers(myData);
+                // setUsers(response.data);
                 console.log(response.data);
             } catch (error) {
                 console.error(error);
@@ -49,22 +51,22 @@ function Users() {
 
     const columns = [
         {
-            name: 'name',
+            name: 'Name',
             selector: row => row.name,
             sortable: true,
         },
         {
-            name: 'email',
+            name: 'Email',
             selector: row => row.email,
             sortable: true,
         },
         {
-            name: 'created_at',
+            name: 'Created At',
             selector: row => moment(row.created_at).format('MMMM Do YYYY, h:mm:ss a'),
             sortable: true,
         },
         {
-            name: 'updated_at',
+            name: 'Updated At',
             selector: row => moment(row.updated_at).format('MMMM Do YYYY, h:mm:ss a'),
             sortable: true,
         },

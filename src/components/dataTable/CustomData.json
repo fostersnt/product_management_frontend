@@ -2,77 +2,88 @@
     {
     "id": 1,
     "image": 1,
-    "name": 1,
+    "name": "John",
+    "email": "John@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 2,
     "image": 1,
-    "name": 1,
+    "name": "Fiifi",
+    "email": "fiifi@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 3,
     "image": 1,
-    "name": 1,
+    "name": "Anim",
+    "email": "anim@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 4,
     "image": 1,
-    "name": 1,
+    "name": "Evans",
+    "email": "evans@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 5,
     "image": 1,
-    "name": 1,
+    "name": "Dramani",
+    "email": "dramani@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 6,
     "image": 1,
-    "name": 1,
+    "name": "George",
+    "email": "george@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 7,
     "image": 1,
-    "name": 1,
+    "name": "Emmanuel",
+    "email": "emmanuel@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 8,
     "image": 1,
-    "name": 1,
+    "name": "Quansah",
+    "email": "quansah@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 9,
     "image": 1,
-    "name": 1,
+    "name": "Foster",
+    "email": "foster@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 10,
     "image": 1,
-    "name": 1,
+    "name": "Asante",
+    "email": "asante@gmail.com",
     "created_at": 1,
     "updated_at": 1
 },
 {
-    "id": 1,
+    "id": 11,
     "image": 1,
-    "name": 1,
+    "name": "Amponsah",
+    "email": "amponsah@gmail.com",
     "created_at": 1,
     "updated_at": 1
 }
