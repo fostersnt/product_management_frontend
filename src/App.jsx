@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import SideBar from './components/SideBar';
-import TableInstance from './components/dataTable/TableInstance';
+import TableOne from './components/dataTable/TableOne';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/users' Component={Users}></Route>
-            <Route path='/datatable' Component={TableInstance}></Route>
+            <Route path='/table-one' Component={TableOne}></Route>
           </Routes>
         </div>
       </div >

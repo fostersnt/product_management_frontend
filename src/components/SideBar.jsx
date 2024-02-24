@@ -13,7 +13,10 @@ function SideBar() {
                     <NavLink to='/users'>Users</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/datatable'>DataTable</NavLink>
+                    <NavLink to='/table-one'>Table One</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/table-two'>Table Two</NavLink>
                 </li>
             </ul>
         </div>

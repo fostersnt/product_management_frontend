@@ -4,7 +4,7 @@ import myData from './CustomData'
 import COLUMNS from './Columns';
 import './table.module.css'
 
-function TableInstance() {
+function TableTwo() {
     const new_columns = useMemo(() => COLUMNS, []); // Wrap COLUMNS in a function for proper memoization
     const new_data = useMemo(() => myData, []);
 
@@ -70,4 +70,4 @@ function TableInstance() {
     )
 }
 
-export default React.memo(TableInstance)
+export default React.memo(TableTwo)
