@@ -21,6 +21,15 @@ function formatDate(any_date){
     return any_date;
 }
 
+function handleSelectedRows({selectedRows})
+{
+    if (selectedRows.length > 0) {
+        console.log("SELECTED ROWS: ", selectedRows[0].name);
+    } else {
+        console.log("NO SELECTED ROW");
+    }
+}
+
 function Users() {
   const [users, setUsers] = useState([]);
 
@@ -68,6 +77,20 @@ function Users() {
     const marginLeft = 40;
     const doc = new jsPDF(orientation, unit, size);
 
+    const pdfTableStyles = {
+        theme: 'grid', // 'plain', 'striped', 'grid', or 'css'
+        headStyles: {
+          fillColor: [214, 214, 214], // Header background color
+        },
+        bodyStyles: {
+          textColor: 50, // Text color
+          fillColor: [255, 255, 255], // Body background color
+        },
+        alternateRowStyles: {
+          fillColor: [245, 245, 245], // Alternate row background color
+        },
+      };
+
     doc.setFontSize(15);
     const title = 'Users Data';
     const headers = userColumns.map((column) => column.name.toLowerCase() != 'actions' ? column.name : null);
@@ -78,7 +101,7 @@ function Users() {
         let formatUpdatedAt = formatDate(row.updated_at);
         return [row.name, row.email, formatCreatedAt, formatUpdatedAt]
     });
-    console.log(data)
+    
     // Add headers and rows to the table
     doc.autoTable({
       head: [headers],
@@ -111,6 +134,8 @@ function Users() {
           pagination
           responsive
           customToolbar={customToolbar}
+          selectableRows
+          onSelectedRowsChange={handleSelectedRows}
         />
       </div>
     </div>
