@@ -46,7 +46,17 @@ function Users() {
   const data = users;
 
   const exportCSV = () => {
-    const csvData = Papa.unparse(data);
+    // let new_data = data.map(item => {
+    //     return {...data, }
+    // })
+    const csvData = Papa.unparse(data.map((row) => ({
+        // Apply your formatting to each property in the row
+        name: row.name.toUpperCase(), // Example: Convert name to uppercase
+        email: row.email.toLowerCase(), // Example: Convert email to lowercase
+        created_at: formatDate(row.created_at), // Example: Format created_at date
+        updated_at: formatDate(row.updated_at), // Example: Format updated_at date
+        // Add more properties as needed
+      })));
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
     saveAs(blob, 'users.csv');
   };
