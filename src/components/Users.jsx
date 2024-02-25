@@ -118,9 +118,9 @@ function Users() {
   };
 
   const customToolbar = () => (
-    <div className="custom-toolbar">
-      <button onClick={exportCSV}>Export CSV</button>
-      <button onClick={()=>exportPDF()}>Export PDF</button>
+    <div className="export_buttons">
+      <button onClick={exportCSV}>CSV</button>
+      <button onClick={()=>exportPDF()}>PDF</button>
     </div>
   );
 
