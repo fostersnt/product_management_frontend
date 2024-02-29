@@ -1,47 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import styles from "../css/admin.layout.module.css";
 
 function AdminLayout() {
-  const [sidebarHidden, setSidebarHidden] = useState(true);
-  const [sidebarClose, setSidebarClose] = useState(true);
+  useEffect(() => {
+    document
+      .getElementById("close_sidebar")
+      .addEventListener("click", function () {
+        document.getElementById("sidebar").classList.add("hide_sidebar");
+      });
 
-  function toggleSidebarMobile() {
-    setSidebarHidden(!sidebarHidden);
-  }
-  function closeSidebar() {
-    setSidebarClose(!sidebarClose);
-  }
+    /* Mobile Sidebar */
+    document
+      .getElementById("mobile_menu")
+      .addEventListener("click", function () {
+        document.getElementById("sidebar").classList.remove("hide_sidebar");
+      });
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    var mainNavs = document.getElementsByClassName("mainNavItem");
+    for (var i = 0; i < mainNavs.length; i++) {
+      mainNavs[i].addEventListener("click", function () {
+        var itemToHide = this.nextElementSibling;
+        console.log(itemToHide);
+        this.classList.toggle("active");
+        itemToHide.classList.toggle("hideItem");
+      });
+    }
+    // });
+  });
 
   return (
-    <div className="" id={styles.main}>
-      <div
-        id={styles.sidebar}
-        className={sidebarHidden ? styles.hide_sidebar : ""}
-      >
-        <div id={styles.logo_container}>
+    <div className="" id="main">
+      <div id="sidebar" className="hide_sidebar">
+        <div id="logo_container">
           <a href="#">
             <img src="./logo.avif" width="100" height="100" alt="" />
           </a>
         </div>
-        <div id={styles.close_sidebar}>
-          <span
-            className="material-symbols-outlined"
-            id={styles.close_sidebar}
-            onClick={() => toggleSidebarMobile()}
-          >
+        <div id="close_sidebar">
+          <span className="material-symbols-outlined" id="close_sidebar">
             close
           </span>
         </div>
         <ul>
-          {/* MAIN ITEM 1 */}
-          <li className={styles.mainNavItem}>
+          {/* <!--MAIN ITEM 1--> */}
+          <li className="mainNavItem">
             <div>
               <span>ITEM 1</span>
               <span className="material-symbols-outlined"> expand_more </span>
             </div>
           </li>
-          <div className={`${styles.sub} ${styles.hideItem}`}>
+          <div className="sub hideItem">
             <ul className="">
               <li>
                 <a href="https:///www.google.com" target="_blank">
@@ -56,14 +66,14 @@ function AdminLayout() {
             </ul>
           </div>
 
-          {/* MAIN ITEM 2 */}
-          <li className={styles.mainNavItem}>
+          {/* <!--MAIN ITEM 2--> */}
+          <li className="mainNavItem">
             <div>
               <span>ITEM 2</span>
               <span className="material-symbols-outlined"> expand_more </span>
             </div>
           </li>
-          <div className={`${styles.sub} ${styles.hideItem}`}>
+          <div className="sub hideItem">
             <ul className="">
               <li>
                 <a href="https:///www.google.com" target="_blank">
@@ -78,14 +88,14 @@ function AdminLayout() {
             </ul>
           </div>
 
-          {/* MAIN ITEM 3 */}
-          <li className={styles.mainNavItem}>
+          {/* <!--MAIN ITEM 3--> */}
+          <li className="mainNavItem">
             <div>
               <span>ITEM 3</span>
               <span className="material-symbols-outlined"> expand_more </span>
             </div>
           </li>
-          <div className={`${styles.sub} ${styles.hideItem}`}>
+          <div className="sub hideItem">
             <ul className="">
               <li>
                 <a href="https:///www.google.com" target="_blank">
@@ -100,14 +110,14 @@ function AdminLayout() {
             </ul>
           </div>
 
-          {/* MAIN ITEM 4 */}
-          <li className={styles.mainNavItem}>
+          {/* <!--MAIN ITEM 4--> */}
+          <li className="mainNavItem">
             <div>
               <span>ITEM 4</span>
               <span className="material-symbols-outlined"> expand_more </span>
             </div>
           </li>
-          <div className={`${styles.sub} ${styles.hideItem}`}>
+          <div className="sub hideItem">
             <ul className="">
               <li>
                 <a href="https:///www.google.com" target="_blank">
@@ -123,18 +133,14 @@ function AdminLayout() {
           </div>
         </ul>
       </div>
-      <div id={styles.main_content}>
-        {/* <span className="material-symbols-outlined" id="mobile_menu"> menu </span> */}
-        <div id={styles.main_content_header}>
-          <span
-            className="material-symbols-outlined"
-            id={styles.mobile_menu}
-            onClick={() => toggleSidebarMobile()}
-          >
+      <div id="main_content">
+        {/* <!-- <span className="material-symbols-outlined" id="mobile_menu"> menu </span> --> */}
+        <div id="main_content_header">
+          <span className="material-symbols-outlined" id="mobile_menu">
             view_comfy_alt
           </span>
-          <div id={styles.action_controls}>
-            <div id={styles.profile}>
+          <div id="action_controls">
+            <div id="profile">
               <span>Profile</span>
               <div>
                 <a href="#">
@@ -145,15 +151,15 @@ function AdminLayout() {
             </div>
           </div>
         </div>
-        <div id={styles.content_container}>
-          <div id={styles.content}>
+        <div id="content_container">
+          <div id="content">
             <h1>
               Main Content will occupy this
               placebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
               bbbbbbbbbbbbbbbbbbbbbbbbbbbb
             </h1>
           </div>
-          <div id={styles.main_footer}>
+          <div id="main_footer">
             <footer>
               <span>
                 Designed & Published By <em>Foster Amponsah Asante</em>
