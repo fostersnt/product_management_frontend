@@ -151,13 +151,10 @@ function AdminLayout() {
             </div>
           </div>
         </div>
+        {/* CONTENTS WILL GO HERE */}
         <div id="content_container">
           <div id="content">
-            <h1>
-              Main Content will occupy this
-              placebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-              bbbbbbbbbbbbbbbbbbbbbbbbbbbb
-            </h1>
+            <Outlet />
           </div>
           <div id="main_footer">
             <footer>
