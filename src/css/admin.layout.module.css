@@ -193,6 +193,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  text-decoration: none;
 }
 #profile:hover > div {
   display: block;
