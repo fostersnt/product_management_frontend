@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "./layout/AdminLayout";
-import Product from "./views/Product";
+const Product = React.lazy(() => import("./views/Product"));
 import Cart from "./views/Cart";
 import NotFound from "./views/NotFound";
 import Home from "./views/Home";
