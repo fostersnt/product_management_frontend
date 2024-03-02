@@ -1,11 +1,11 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import AdminLayout from "./layout/AdminLayout";
-import Login from "./views/Login";
-const Product = React.lazy(() => import("./views/Product"));
-const Cart = React.lazy(() => import("./views/Cart"));
-const NotFound = React.lazy(() => import("./views/NotFound"));
-const Home = React.lazy(() => import("./views/Home"));
+import AdminLayout from "../components/layout/AdminLayout";
+import Login from "../components/views/Login";
+const Product = React.lazy(() => import("../components/views/Product"));
+const Cart = React.lazy(() => import("../components/views/Cart"));
+const NotFound = React.lazy(() => import("../components/views/NotFound"));
+const Home = React.lazy(() => import("../components/views/Home"));
 // const Product = React.lazy(() => import("./views/Product"));
 
 const router = createBrowserRouter([
