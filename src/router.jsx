@@ -1,10 +1,12 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "./layout/AdminLayout";
+import Login from "./views/Login";
 const Product = React.lazy(() => import("./views/Product"));
-import Cart from "./views/Cart";
-import NotFound from "./views/NotFound";
-import Home from "./views/Home";
+const Cart = React.lazy(() => import("./views/Cart"));
+const NotFound = React.lazy(() => import("./views/NotFound"));
+const Home = React.lazy(() => import("./views/Home"));
+// const Product = React.lazy(() => import("./views/Product"));
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "*",

@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import styles from "../css/admin.layout.module.css";
+import { useAuth } from "../context/AuthContext";
 
 function AdminLayout() {
+  const { authenticated, login, logout } = useAuth();
+  const navigate = useNavigate();
+  if (!authenticated) {
+    navigate("/login");
+  }
+
   useEffect(() => {
     document
       .getElementById("close_sidebar")
