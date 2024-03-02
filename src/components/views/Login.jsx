@@ -1,6 +1,7 @@
 import React from "react";
 
 const Login = () => {
+  alert(import.meta.env.VITE_REACT_APP_API_KEY);
   return (
     <div>
       <h3>Login</h3>
